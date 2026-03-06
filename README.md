@@ -20,7 +20,10 @@ Elevate your workspace with **TechnoMindz Media Hub** — a sleek, powerful, and
 
 See TechnoMindz Media Controller controlling your system media directly from VS Code.
 
-<video src="https://github.com/user-attachments/assets/6832e312-76c4-484f-aa15-d670d1654423" autoplay loop muted playsinline controls width="100%"></video>
+<a href="https://github.com/user-attachments/assets/6832e312-76c4-484f-aa15-d670d1654423" target="_blank">
+  <img src="resources/screenshot.png" alt="Watch the Demo Video" width="100%">
+  <br><em>Click image to watch the full Video Demo</em>
+</a>
 
 ⚠️ This extension currently works only on **Windows** because it uses the Windows Media Transport Controls API via WinRT.
 
