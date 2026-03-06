@@ -214,7 +214,7 @@ async def _evaluate_sessions() -> None:
         # 1. Prefer any PLAYING session
         for s in sessions:
             try:
-                if int(s.get_playback_info().playback_status) == 4:
+                if int(s.get_playback_info().playback_status) == 4:  # type: ignore
                     best_session = s
                     break
             except Exception:
@@ -225,7 +225,7 @@ async def _evaluate_sessions() -> None:
             try:
                 curr_id = _current_session.source_app_user_model_id
                 for s in sessions:
-                    if s.source_app_user_model_id == curr_id:
+                    if s.source_app_user_model_id == curr_id:  # type: ignore
                         best_session = s
                         break
             except Exception:
