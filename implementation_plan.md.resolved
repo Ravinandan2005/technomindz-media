@@ -1,0 +1,46 @@
+# Upgrading Sidebar to a Webview
+
+The goal is to replace the basic `TreeView` with a rich, interactive HTML/CSS/JS `WebviewView` embedded directly in the VS Code sidebar. It will feature a sleek dark theme, Spotify-like layout, progress scrubbing, and dedicated media controls.
+
+## Proposed Changes
+
+### Package Manifest
+
+#### [MODIFY] [package.json](file:///d:/Projects/Media%20Player%20Github/technomindz-media/package.json)
+- In the `views` contribution for `technomindz-media.hub`, add `"type": "webview"`. This tells VS Code that this view will be provided by a `WebviewViewProvider` rather than a [TreeDataProvider](file:///d:/Projects/Media%20Player%20Github/technomindz-media/src/extension.ts#29-173).
+
+---
+
+### Python Backend
+
+#### [MODIFY] [media_backend.py](file:///d:/Projects/Media%20Player%20Github/technomindz-media/media_backend.py)
+1. **Emit Timeline Progress**: 
+   - Add a `_read_timeline()` function that gets `session.get_timeline_properties()`.
+   - Calculate `position` and `end_time` (duration) in seconds from the returned `timedelta` objects.
+   - Emit `PROGRESS:<position>:<duration>` lines continuously (hooked into `_on_timeline_properties_changed` and the [heartbeat](file:///d:/Projects/Media%20Player%20Github/technomindz-media/media_backend.py#278-283)).
+2. **Handle Seeking (Scrubbing)**:
+   - Add a `scrub:<seconds>` command parser in STDIN listener.
+   - Use `session.try_change_playback_position_async(int(seconds * 10_000_000))` (WinRT TimeSpan ticks are 100-nanosecond intervals).
+
+---
+
+### Extension TypeScript
+
+#### [MODIFY] [extension.ts](file:///d:/Projects/Media%20Player%20Github/technomindz-media/src/extension.ts)
+1. **Remove [MediaTreeDataProvider](file:///d:/Projects/Media%20Player%20Github/technomindz-media/src/extension.ts#29-173)**.
+2. **Create `MediaWebviewProvider`** implementing `vscode.WebviewViewProvider`.
+   - `resolveWebviewView()` sets `webview.html` to a beautifully styled, responsive dark-themed Spotify clone.
+   - Receives state updates from the Python stdout parser (`TRACK:`, `STATE:`, `PROGRESS:`) and forwards them to the webview via `webview.postMessage()`.
+   - Listens for `webview.onDidReceiveMessage()` to handle UI clicks (Play, Pause, Prev, Next, Scrub) and forwards them to the Python STDIN over the existing `spawn` handle.
+3. The HTML will include:
+   - The user's [logo.png](file:///d:/Projects/Media%20Player%20Github/technomindz-media/resources/logo.png) at the very top.
+   - Large scrolling ticker for the track `Title`.
+   - Secondary text for `Artist`.
+   - An interactive `<input type="range">` slider for the progress bar.
+   - Aesthetic SVG icon buttons for playback controls.
+
+## Verification Plan
+
+1. Verify `tsc` compiles cleanly.
+2. Hit `F5`, open the TechnoMindz Media Hub sidebar, and verify the rich UI loads.
+3. Test play/pause, next/prev, and crucially, click/drag the progress bar to scrub the track position.
