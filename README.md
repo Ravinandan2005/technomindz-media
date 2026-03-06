@@ -127,32 +127,8 @@ Initial release of **TechnoMindz Media**.
 - Completely responsive CSS architecture with Marquee wrappers.
 - Windows Media Session sticky binding.
 
-## Support TechnoMindz Media ☕
+## Support
 
-If **TechnoMindz Media Controller** improves your workflow and you would like to support the project, you can donate using **UPI / Google Pay**.
+If you encounter issues or want to suggest features, please open an issue on the GitHub repository.
 
-Your support helps maintain the extension and build new features.
-
----
-
-## Scan to Donate
-
-You can scan the QR code below using **Google Pay, PhonePe, Paytm, or any UPI app**.
-
-<img src="resources/donate.png" width="220">
-
----
-
-## UPI ID
-
-`ravinandanofficial-1@okaxis`
-
-You can copy this UPI ID and pay using any UPI application.
-
----
-
-## Why support?
-
-Maintaining open-source tools takes time. Contributions help keep the project maintained and allow new improvements in future releases.
-
-Thank you for supporting the project ❤️
+[☕ Buy me a coffee](support.md)
