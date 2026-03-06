@@ -11,10 +11,9 @@ Elevate your workspace with **TechnoMindz Media Hub** — a sleek, powerful, and
 ### Media Hub inside VS Code
 
 
-<p align="center">
-  <img src="resources/screenshot.png" width="48%" style="margin-right: 1.5%;">
-  <img src="resources/screenshot2.png" width="48%" style="margin-left: 1.5%;">
-</p>
+![TechnoMindz Media Controller Full Environment](resources/screenshot.png)
+
+![TechnoMindz Media Controller Sidebar View](resources/screenshot2.png)
 
 ## Demo
 
