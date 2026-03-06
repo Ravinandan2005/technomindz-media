@@ -1,6 +1,25 @@
-# TechnoMindz Media Hub
+![VS Code Extension](https://img.shields.io/badge/VSCode-Extension-blue)
+![Platform](https://img.shields.io/badge/Platform-Windows-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+# TechnoMindz Media Controller
 
 Elevate your workspace with **TechnoMindz Media Hub** — a sleek, powerful, and responsive media controller designed to keep your focus sharp and your music perfectly synced directly inside Visual Studio Code.
+
+## Preview
+
+### Media Hub inside VS Code
+
+![TechnoMindz Media Controller](resources/logo.png)
+
+## Demo
+
+See TechnoMindz Media Controller controlling your system media directly from VS Code.
+
+*(Demo video coming soon)*
+
+⚠️ This extension currently works only on **Windows** because it uses the Windows Media Transport Controls API via WinRT.
+
 
 ## Features
 
@@ -29,24 +48,52 @@ You will need Python 3 installed and accessible via your system PATH or integrat
 **Dependencies:**
 - `winsdk`
 
-You can install the required dependency manually via:
+You must install the required dependency using Python.
+
+Open a terminal and run:
 ```bash
 pip install winsdk
 ```
+Make sure Python is installed on your computer and available in your system PATH.
 
 ## Installation
+
+### Install from Marketplace
+
+1. Open **VS Code**
+2. Go to **Extensions**
+3. Search for **TechnoMindz Media Controller**
+4. Click **Install**
+
+### Developer Setup
+
 1. Clone the repository into your VS Code extensions folder or open the folder directly in VS Code.
 2. Run `npm install` to install extension dependencies.
-3. Ensure your Python environment has `winsdk` installed.
+3. Ensure your Python environment has `winsdk` installed (`pip install winsdk`).
 4. Press `F5` to open an Extension Development Host with the Media Hub loaded.
 
 ## How to Use
 Once installed and activated:
-1. Open the **Explorer** sidebar in VS Code.
+1. Open the **Explorer** sidebar in VS Code (`Ctrl` + `Shift` + `E`).
 2. Expand the accordion tab labeled `TechnoMindz Media Hub`.
 3. Play any media on your system (Spotify, Chrome, YouTube, Music apps).
 4. The panel will instantly sync with the playing track, displaying the Album Art, Artist, Title, and playback scrubber.
 5. Use the UI buttons or the bottom Status bar buttons to control your system's media without ever leaving your editor.
+
+## Commands
+
+You can also control media from the Command Palette.
+
+Open Command Palette (`Ctrl` + `Shift` + `P`) and run:
+- `Media: Play / Pause`
+- `Media: Next Track`
+- `Media: Previous Track`
+
+## First Run
+
+When the extension starts for the first time, it launches a lightweight Python background process that connects to Windows Media Transport Controls.
+
+If no media is currently playing, the panel will display the TechnoMindz logo until a media session becomes active.
 
 ## Extension Settings
 
