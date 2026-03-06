@@ -3,6 +3,12 @@
   "displayName": "technomindz-media",
   "description": "Elevate your workspace. A sleek, powerful media controller to keep your focus sharp and your music perfectly synced. 🎶",
   "version": "0.0.1",
+  "publisher": "technomindz",
+  "icon": "resources/logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ravinandan2005/technomindz-media.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
