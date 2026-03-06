@@ -12,18 +12,15 @@ Elevate your workspace with **TechnoMindz Media Hub** — a sleek, powerful, and
 
 
 <p align="center">
-  <img src="resources/screenshot.png" width="49%" />
-  <img src="resources/screenshot2.png" width="49%" />
+  <img src="resources/screenshot.png" width="48%" style="margin-right: 1.5%;">
+  <img src="resources/screenshot2.png" width="48%" style="margin-left: 1.5%;">
 </p>
 
 ## Demo
 
 See TechnoMindz Media Controller controlling your system media directly from VS Code.
 
-<a href="https://github.com/user-attachments/assets/6832e312-76c4-484f-aa15-d670d1654423" target="_blank">
-  <img src="resources/screenshot.png" alt="Watch the Demo Video" width="100%">
-  <br><em>Click image to watch the full Video Demo</em>
-</a>
+[▶️ Watch the Full Demo Video Here](https://github.com/user-attachments/assets/6832e312-76c4-484f-aa15-d670d1654423)
 
 ⚠️ This extension currently works only on **Windows** because it uses the Windows Media Transport Controls API via WinRT.
 
