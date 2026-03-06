@@ -10,13 +10,13 @@ Elevate your workspace with **TechnoMindz Media Hub** — a sleek, powerful, and
 
 ### Media Hub inside VS Code
 
-![TechnoMindz Media Controller](resources/logo.png)
+<img src="resources/logo.png" alt="TechnoMindz Media Controller" width="250">
 
 ## Demo
 
 See TechnoMindz Media Controller controlling your system media directly from VS Code.
 
-*(Demo video coming soon)*
+https://github.com/user-attachments/assets/6832e312-76c4-484f-aa15-d670d1654423
 
 ⚠️ This extension currently works only on **Windows** because it uses the Windows Media Transport Controls API via WinRT.
 
@@ -56,14 +56,16 @@ pip install winsdk
 ```
 Make sure Python is installed on your computer and available in your system PATH.
 
-## Installation
+### Step-by-Step Installation
 
-### Install from Marketplace
-
-1. Open **VS Code**
-2. Go to **Extensions**
-3. Search for **TechnoMindz Media Controller**
-4. Click **Install**
+1. Open **VS Code** (`Ctrl` + `Shift` + `X` to open Extensions).
+2. Search for **TechnoMindz Media Controller** and click **Install**.
+3. **Ensure Python 3 is installed** on your computer and added to your system PATH.
+4. Open a new terminal in VS Code (or your command prompt) and run this exact command to install the required Windows integrations:
+   ```bash
+   pip install winsdk
+   ```
+5. Reload VS Code.
 
 ### Developer Setup
 

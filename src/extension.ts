@@ -13,7 +13,8 @@ export function activate(context: vscode.ExtensionContext): void {
     const extensionRoot = context.extensionPath;
 
     // Paths
-    const pythonExe = path.join(extensionRoot, '.venv', 'Scripts', 'python.exe');
+    const venvPythonPath = path.join(extensionRoot, '.venv', 'Scripts', 'python.exe');
+    const pythonExe = fs.existsSync(venvPythonPath) ? venvPythonPath : 'python';
     const scriptPath = path.join(extensionRoot, 'media_backend.py');
 
     // ── 1. Create Status Bar Items ──────────────────────────────────────
@@ -587,10 +588,16 @@ export function activate(context: vscode.ExtensionContext): void {
             stderrBuffer += text + '\n';
         });
 
-        mediaProcess.on('error', (err: Error) => {
-            vscode.window.showErrorMessage(
-                `technomindz-media: failed to start backend — ${err.message}`,
-            );
+        mediaProcess.on('error', (err: any) => {
+            if (err.code === 'ENOENT' || err.message.includes('ENOENT')) {
+                vscode.window.showErrorMessage(
+                    "Python is required for TechnoMindz Media Hub. Install Python 3 and run: pip install winsdk"
+                );
+            } else {
+                vscode.window.showErrorMessage(
+                    `technomindz-media: failed to start backend — ${err.message}`
+                );
+            }
         });
 
         mediaProcess.on('exit', (code: number | null) => {
