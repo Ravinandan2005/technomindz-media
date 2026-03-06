@@ -1,8 +1,14 @@
-![VS Code Extension](https://img.shields.io/badge/VSCode-Extension-blue)
+# TechnoMindz Media Controller
+
+[![Install](https://img.shields.io/badge/Install-VS%20Code%20Marketplace-blue)](https://marketplace.visualstudio.com/items?itemName=TechnoMindz.technomindz-media)
 ![Platform](https://img.shields.io/badge/Platform-Windows-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-# TechnoMindz Media Controller
+## Install from VS Code Marketplace
+
+[https://marketplace.visualstudio.com/items?itemName=TechnoMindz.technomindz-media](https://marketplace.visualstudio.com/items?itemName=TechnoMindz.technomindz-media)
+
+You can install it directly from VS Code by searching for **TechnoMindz Media Controller** in the Extensions view.
 
 Elevate your workspace with **TechnoMindz Media Hub** — a sleek, powerful, and responsive media controller designed to keep your focus sharp and your music perfectly synced directly inside Visual Studio Code.
 
@@ -11,9 +17,11 @@ Elevate your workspace with **TechnoMindz Media Hub** — a sleek, powerful, and
 ### Media Hub inside VS Code
 
 
-![TechnoMindz Media Controller Full Environment](resources/screenshot.png)
-
-![TechnoMindz Media Controller Sidebar View](resources/screenshot2.png)
+<p align="center">
+  <img src="resources/screenshot.png" width="85%" alt="TechnoMindz Media Controller Full Environment">
+  <br><br>
+  <img src="resources/screenshot2.png" width="85%" alt="TechnoMindz Media Controller Sidebar View">
+</p>
 
 ## Demo
 
@@ -118,3 +126,7 @@ Initial release of **TechnoMindz Media**.
 - Live python-powered timeline scrubbing and Base64 Thumbnail extraction.
 - Completely responsive CSS architecture with Marquee wrappers.
 - Windows Media Session sticky binding.
+
+## Support
+
+If you encounter issues or want to suggest features, please open an issue on the GitHub repository.
